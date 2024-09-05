@@ -1,9 +1,13 @@
 # About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+### Hi there 👋 I am NekoMio
+> A student from Beijing University of Posts and Telecommunications
 
-::github{repo="saicaca/fuwari"}
+::github{repo="NekoMio/NekoMio"}
 
-> ### Sources of images used in this site
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+Talk with me by [Email](mailto:hui@nekomio.com) or [Telegram](https://t.me/Nekohui)
+
+
+<div class="display:flex">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=NekoMio&layout=compact&theme=material-palenight" alt="NekoMio's most used languages" />
+<img height="165" class="margin-right: 10%" src="https://github-readme-stats.vercel.app/api?username=NekoMio&show_icons=true&include_all_commits=true&theme=material-palenight" alt="NekoMio's github stats"/>
+</div>
