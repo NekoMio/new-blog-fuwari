@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content'
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('posts', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true
+  })
+  return blogEntries.map(entry => ({
+    params: {
+      year: entry.data.published.getFullYear(),
+      month: entry.data.published.getMonth(),
+      day: entry.data.published.getDay(),
+      slug: entry.slug,
+    },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+const url = `0;url=/posts/${entry.slug}`
+---
+<html>
+<meta http-equiv="refresh" content={url} />
+</html>
