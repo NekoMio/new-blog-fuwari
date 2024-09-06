@@ -4,11 +4,12 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection('posts', ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true
   })
+  console.log(blogEntries)
   return blogEntries.map(entry => ({
     params: {
       year: entry.data.published.getFullYear(),
-      month: entry.data.published.getMonth(),
-      day: entry.data.published.getDay(),
+      month: entry.data.published.getMonth() + 1,
+      day: entry.data.published.getDate() + 1,
       slug: entry.slug,
     },
     props: { entry },
