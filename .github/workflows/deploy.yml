@@ -31,7 +31,7 @@ jobs:
       - run: pnpm install
       - run: pnpm run build
       - name: Upload result for build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: public
           path: ./dist
@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download result for build
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: public
           path: ./dist
