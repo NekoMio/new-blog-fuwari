@@ -77,7 +77,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
+          port: ${{ secrets.SSH_PORT }}
           source: "./dist/*" # 如果有构建步骤，这里应指向构建输出目录，例如 "./dist/*" 或 "./build/*"
           target: ${{ secrets.REMOTE_PATH }}
           rm: true
