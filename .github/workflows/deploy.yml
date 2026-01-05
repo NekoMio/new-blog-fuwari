@@ -81,3 +81,23 @@ jobs:
           source: "./dist/*" # 如果有构建步骤，这里应指向构建输出目录，例如 "./dist/*" 或 "./build/*"
           target: ${{ secrets.REMOTE_PATH }}
           rm: true
+  
+  deploy_to_server_2:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download result for build
+        uses: actions/download-artifact@v4
+        with:
+          name: public
+          path: ./dist
+      - name: Copy files to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST_2 }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT_2 }}
+          source: "./dist/*" # 如果有构建步骤，这里应指向构建输出目录，例如 "./dist/*" 或 "./build/*"
+          target: ${{ secrets.REMOTE_PATH }}
+          rm: true
